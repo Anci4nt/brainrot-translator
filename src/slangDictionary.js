@@ -46,7 +46,7 @@ const slangDictionary = {
     "excited": "vibing HARD 🤩🔥",
     "lit": "straight fire 🔥🔥",
     "cap": "stop the 🧢",
-    "truth": "big facts 🔥",
+    "truth": "big fax 🔥",
     "dumb": "L braincell 🧠💀",
     "legend": "GOATED 🐐",
     "simp": "down bad 🫠",
@@ -69,7 +69,11 @@ const slangDictionary = {
     "leave": "dip out 🚪💨",
     "bad": "straight trash 🗑️",
     "good": "W fr 🙌",
-    "nice": "valid af ✅🔥"
+    "nice": "valid af ✅🔥",
+    "himanshu": "dumb lit 🔥🔥",
+    "bro": "bruv",
+    "my": "mah",
+
 };
 
 export default slangDictionary;

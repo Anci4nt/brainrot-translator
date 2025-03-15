@@ -16,6 +16,14 @@ const memes = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCv0bEr9bOL3lPpd47V2n1f-5xKkpunR9hlg&s"
 ];
 
+const soundEffects = [
+  "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+  "https://www.myinstants.com/media/sounds/roblox-oof.mp3",
+  "https://www.myinstants.com/media/sounds/metal_pipe.mp3",
+  "https://www.myinstants.com/media/sounds/among-us-drip-theme.mp3",
+  "https://www.myinstants.com/media/sounds/bruh.mp3"
+];
+
 function App() {
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
@@ -32,15 +40,32 @@ function App() {
     setTranslatedText(preprocessedText);
   };
 
+  const playRandomSound = () => {
+    const randomSound = soundEffects[Math.floor(Math.random() * soundEffects.length)];
+    const audio = new Audio(randomSound);
+    audio.play();
+  };
+
   useEffect(() => {
     const showRandomPopup = () => {
       setRandomMeme(memes[Math.floor(Math.random() * memes.length)]);
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 2000);
     };
-    
+
     const interval = setInterval(showRandomPopup, Math.random() * (10000 - 5000) + 5000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = () => {
+      playRandomSound();
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
   }, []);
 
   return (
